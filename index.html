@@ -50,13 +50,16 @@
 
     <!--Преимущества-->
     <main>
-    <section class="hero-overlay">
-        <div class="conteiner-hero">
-            <div class="backdroup is-hidden" data-modal></div>
+        <section class="hero-overlay">
+            <div class="conteiner-hero">
             <h1 class="name">ЕФФЕКТИВНЫЕ РЕШЕНИЯ <br />ДЛЯ ВАШЕГО БИЗНЕСА</h1>
-            <div class="backgraund" data-modal-open>
-            <a href="" class="current">Заказать услугу</a>
-            <div class="modal" data-modal-close></div>
+            <a href="" class="current" data-modal-open>Заказать услугу</a>
+            <div class="backdrop is-hidden">
+            <div class="data-modal">
+                <button data-modal-close><svg class="close" width="30" height="30">
+                    <use href="./images/iconssvg/symbol-defs.svg#icon-close"></use>
+                </svg></button>
+            </div>
             </div>
         </div>
     </section>

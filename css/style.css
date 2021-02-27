@@ -16,6 +16,8 @@
 
   --icon-cocial: rgba(175, 177, 184, 1);
   --icon-background: rgba(245, 244, 250, 1);
+
+  --overlay: rgba(0, 0, 0, 0.2);
 }
 
 body {
@@ -63,12 +65,15 @@ img {
   padding-left: 93px;
 }
 
-.social-links::after {
-  contain: '';
+.social-links .links::after,
+.social-links .link-current::after {
+  content: '';
   display: flex;
-  width: 48px;
+  width: 100%;
   height: 4px;
   position: absolute;
+  bottom: 0;
+  left: 0;
   border-radius: 2px;
   background-color: var(--blue-text);
 }
@@ -140,11 +145,14 @@ img {
   color: var(--blue-text);
 }
 
-.links {
+.links,
+.link {
   font-style: normal;
   font-weight: 500;
   cursor: pointer;
   color: var(--blue-text);
+  padding-bottom: 31px;
+  position: relative;
 }
 
 .link-current {
@@ -152,6 +160,8 @@ img {
   font-weight: 500;
   cursor: pointer;
   color: var(--blue-text);
+  position: relative;
+  padding-bottom: 31px;
 }
 
 .item .icon {
@@ -197,6 +207,44 @@ img {
   background-repeat: no-repeat;
   background-size: auto;
   background-position: center;
+}
+
+.backdrop {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--overlay);
+}
+
+.backdrop .is-hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.data-modal {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+
+  width: 528px;
+  height: 581px;
+  background-color: var(--white-list);
+
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+}
+
+.close {
+  position: absolute;
+  justify-content: flex-end;
+  display: flex;
+  margin-left: 8px;
+  margin-top: 8px;
+  border-radius: 50%;
 }
 
 .hero {
