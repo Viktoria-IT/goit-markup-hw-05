@@ -63,6 +63,16 @@ img {
   padding-left: 93px;
 }
 
+.social-links::after {
+  contain: '';
+  display: flex;
+  width: 48px;
+  height: 4px;
+  position: absolute;
+  border-radius: 2px;
+  background-color: var(--blue-text);
+}
+
 .social-links > .item:not(:last-child) {
   margin-right: 50px;
 }
