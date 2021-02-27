@@ -223,7 +223,7 @@ img {
   pointer-events: none;
 }
 
-.data-modal {
+.modal {
   position: absolute;
   left: 50%;
   top: 50%;
