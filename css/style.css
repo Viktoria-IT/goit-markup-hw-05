@@ -243,9 +243,11 @@ img {
   display: flex;
   justify-content: center;
   align-items: center;
-  transform: translateX(-38px);
-  margin-left: 8px;
-  margin-top: 8px;
+  right: 8px;
+  bottom: 93%;
+  width: 30px;
+  height: 30px;
+
   border: solid 1px var(--icon-cocial);
   border-radius: 50%;
 }
