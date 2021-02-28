@@ -78,6 +78,7 @@ img {
   left: 0;
   border-radius: 2px;
   background-color: var(--blue-text);
+  transform: translateY(1px);
 }
 
 .social-links > .item:not(:last-child) {
@@ -141,6 +142,7 @@ img {
   color: var(--blue-text);
   background: var(--white-text);
   text-decoration: none;
+  transform: translateY(1px);
 }
 
 .social-links .current {
@@ -684,7 +686,6 @@ img {
 .list-info > .icon-list:hover,
 .list-info > .icon-list:focus {
   background-color: var(--blue-text);
-  /* transition: opacity 1s, height 1s; */
 }
 
 .icons-svg {
@@ -817,6 +818,14 @@ img {
     1px 4px 6px rgba(0, 0, 0, 0.16);
 }
 
+.card-list {
+  position: relative;
+  overflow: hidden;
+  border-style: none;
+  width: 370px;
+  height: 294px;
+}
+
 .card-list::before {
   content: '';
 
@@ -836,7 +845,7 @@ img {
   content: '';
 
   position: absolute;
-  bottom: 0;
+  top: 0;
   left: 0;
   opacity: 0;
   width: 100%;
