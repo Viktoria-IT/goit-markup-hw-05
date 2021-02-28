@@ -228,7 +228,7 @@ img {
 }
 
 .backdrop .is-hidden .modal {
-  transform: translate(-50%, -50%) scale(1.1);
+  transform: scale(1.1) translate(-50%, -50%);
 }
 
 .modal {
@@ -684,7 +684,7 @@ img {
 .list-info > .icon-list:hover,
 .list-info > .icon-list:focus {
   background-color: var(--blue-text);
-  transition: opacity 1s, height 1s;
+  /* transition: opacity 1s, height 1s; */
 }
 
 .icons-svg {
@@ -817,23 +817,32 @@ img {
     1px 4px 6px rgba(0, 0, 0, 0.16);
 }
 
-.card-list {
-  position: relative;
-  overflow: hidden;
-  border-style: none;
-  width: 368px;
-  height: 294px;
-}
+.card-list::before {
+  content: '';
 
-.portfolio-overlay {
   position: absolute;
   bottom: 0;
   left: 0;
+  opacity: 0;
   width: 100%;
   height: 100%;
-  background-color: var(--project-card-overlay-bg);
-  padding: 63px 24px;
+  overflow: hidden;
+  transform: translateY(100%);
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.portfolio-overlay {
+  display: inline-block;
+  content: '';
+
+  position: absolute;
+  bottom: 0;
+  left: 0;
   opacity: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background-color: var(--hover-overlay);
   transform: translateY(100%);
   transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -845,13 +854,32 @@ img {
   line-height: 28px;
   letter-spacing: 0.03em;
   color: var(--white-text);
+  padding: 63px 24px;
 }
 
-.card-portfolio: hover .portfolio-overlay {
-  transform: translatey();
+.portfolio-overlay: hover .card-list::before {
+  transform: translateY(0);
   opacity: 1;
 }
 
-.card-portfolio: hover .text-overlay {
+/* .card-portfolio: hover .text-overlay {
   box-shadow: none;
+} */
+
+.art-card::after {
+  content: '';
+
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  background-color: var(--hover-overlay);
+  transform: scaleY(0);
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.art-card:hover ::after {
+  transform: scaleY(1);
 }
