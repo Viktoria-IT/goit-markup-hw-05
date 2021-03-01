@@ -83,6 +83,7 @@ img {
   border-radius: 2px;
   background-color: var(--blue-text);
   transform: translateY(1px);
+  transition: color var(--time) var(--cubic);
 }
 
 .social-links > .item:not(:last-child) {
@@ -92,13 +93,13 @@ img {
 .social-links-info {
   display: flex;
   margin-left: auto;
-  transition: color var(--time) var(--cubic);
+  transition: backgraund-color var(--time) var(--cubic);
 }
 
 .item .icon {
   margin-right: 10px;
   align-items: center;
-  transition: color var(--time) var(--cubic);
+  transition: backgraund-color var(--time) var(--cubic);
 }
 
 .social-links-info .item:hover .contacts-mail,
@@ -164,6 +165,7 @@ img {
   color: var(--blue-text);
   padding-bottom: 31px;
   position: relative;
+  transition: color var(--time) var(--cubic);
 }
 
 .link-current {
@@ -482,6 +484,7 @@ img {
 .team-list {
   text-align: center;
   padding: 30px 32px;
+  transition: color var(--time) var(--cubic);
 }
 
 .team {
@@ -511,10 +514,15 @@ img {
 .cocial-list {
   margin-right: 10px;
   border-radius: 50%;
+  transition: background-color var(--time) var(--cubic);
 }
 
 .cocial-list:last-child {
   margin-right: 0;
+}
+
+.cocial-info {
+  transition: background-color var(--hover-overlay) var(--time) var(--cubic);
 }
 
 .cocial-item {
@@ -523,7 +531,7 @@ img {
   height: 44px;
   align-items: center;
   justify-content: center;
-  transition: color var(--time) var(--cubic);
+  transition: background-color var(--hover-overlay) var(--time) var(--cubic);
 }
 
 .cocial-item:last-child {
@@ -533,7 +541,7 @@ img {
 
 .icon-svg {
   fill: var(--icon-cocial);
-  transition: color var(--time) var(--cubic);
+  transition: background-color var(--hover-overlay) var(--time) var(--cubic);
 }
 
 .cocial-link .cocial-list:hover .icon-svg,
@@ -576,6 +584,7 @@ img {
   margin-right: -30px;
   margin-top: 0;
   margin-bottom: 0;
+  transition: backgraund-color var(--time) var(--cubic);
 }
 
 .list-client .clients-logo {
@@ -590,11 +599,12 @@ img {
   margin-right: 30px;
   flex-basis: calc(100% / 6 - 30px);
   cursor: pointer;
-  transition: color var(--time) var(--cubic);
+  transition: backgraund-color var(--time) var(--cubic);
 }
 
 .clients-svg {
   fill: currentColor;
+  transition: backgraund-color var(--time) var(--cubic);
 }
 
 .list-client .clients-logo:hover .clients-svg,
@@ -602,6 +612,7 @@ img {
   fill: var(--blue-text);
   border: 1px solid var(--blue-text);
   border-radius: 4px;
+  width: 176px;
 }
 
 /* address */
@@ -705,6 +716,7 @@ img {
   display: flex;
   align-items: center;
   justify-content: center;
+  transition: backgraund-color var(--time) var(--cubic);
 }
 
 .icon-list {
@@ -712,7 +724,7 @@ img {
   margin-right: 10px;
   border-radius: 50%;
   background-color: var(--header-backgraund);
-  transition: color var(--time) var(--cubic);
+  transition: backgraund-color var(--time) var(--cubic);
 }
 
 .icons-svg {
@@ -753,6 +765,7 @@ img {
   border: 1px solid transparent;
   border-radius: 4px;
   padding: 6px 22px;
+  transition: color var(--time) var(--cubic);
 }
 
 .section-button {
@@ -764,7 +777,6 @@ img {
   background: var(--background-section-four);
   color: var(--black-text);
   border-radius: 4px;
-  transition: color var(--time) var(--cubic);
 }
 
 .section-button .section-btn:hover {
@@ -847,6 +859,7 @@ img {
 
 .card-list:hover .portfolio-overlay {
   transform: translateY(0);
+  opacity: 1;
 }
 
 .portfolio-overlay {
@@ -856,7 +869,7 @@ img {
   width: 100%;
   height: 100%;
   background-color: var(--hover-overlay);
-
+  opacity: 0;
   transform: translateY(100%);
   transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
