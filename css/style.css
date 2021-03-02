@@ -165,7 +165,7 @@ img {
   margin-right: 30px;
 }
 
-.item .icon:focus {
+.icon:focus {
   fill: var(--blue-text);
 }
 
@@ -202,6 +202,23 @@ img {
   transition-property: color;
   transition-duration: var(--time);
   transition-timing-function: var(--cubic);
+}
+
+.social-links-info .contacts-mail:focus .icon,
+.social-links-info .contacts-tel:focus .icon {
+  fill: var(--blue-text);
+}
+
+.social-links-info .item:hover .contacts-mail,
+.social-links-info .item:focus .contacts-mail,
+.social-links-info .item:hover .contacts-tel,
+.social-links-info .item:focus .contacts-tel {
+  color: var(--blue-text);
+}
+
+.social-links-info .item:hover .icon,
+.social-links-info .item:focus .icon {
+  fill: var(--blue-text);
 }
 
 /* hero */
@@ -744,8 +761,7 @@ img {
   transition-timing-function: var(--cubic);
 }
 
-.list-info .cocial-info:focus .icons-svg,
-.list-info .cocial-info:hover .icons-svg {
+.list-info .cocial-info:focus .icons-svg {
   fill: var(--blue-text);
 }
 
@@ -793,8 +809,7 @@ img {
   display: inline-block;
   border: 1px solid transparent;
   border-radius: 4px;
-  padding: 6px 22px;
-  transition: color var(--time) var(--cubic);
+  padding: 11px 22px;
 }
 
 .section-button {
@@ -819,14 +834,15 @@ img {
     0px 2px 2px rgba(0, 0, 0, 0.12);
 }
 
+.list-list:focus .section-button {
+  background-color: var(--blue-text);
+}
+
 .section-btn {
   font-style: normal;
   font-weight: 500;
   font-size: 16px;
   line-height: 26px;
-  transition-property: color, background-color, box-shadow;
-  transition-duration: var(--time);
-  transition-timing-function: var(--cubic);
 }
 
 /* portfolio-card */
@@ -847,7 +863,6 @@ img {
   margin-top: 30px;
   flex-basis: calc(100% / 3 - 30px);
 
-  transition: fill var(--time) var(--cubic);
   transition-property: box-shadow;
   transition-duration: var(--time);
   transition-timing-function: var(--cubic);
@@ -896,15 +911,16 @@ img {
   overflow: hidden;
 }
 
-.art-card:hover .portfolio-overlay {
+.art-card:hover .portfolio-overlay,
+.art-card:focus .portfolio-overlay {
   transform: translateY(0);
   opacity: 1;
 }
 
-.card-list:hover .portfolio-overlay {
+/* .card-list:hover .portfolio-overlay {
   transform: translateY(0);
   opacity: 1;
-}
+} */
 
 .portfolio-overlay {
   position: absolute;
