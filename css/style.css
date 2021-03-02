@@ -68,7 +68,6 @@ img {
   display: flex;
   margin: 0;
   padding-left: 93px;
-  transition: fill var(--time) var(--cubic);
 }
 
 .social-links .links::after,
@@ -88,34 +87,6 @@ img {
 
 .social-links > .item:not(:last-child) {
   margin-right: 50px;
-}
-
-.social-links-info {
-  display: flex;
-  margin-left: auto;
-  transition: fill var(--time) var(--cubic);
-}
-
-.item .icon {
-  margin-right: 10px;
-  align-items: center;
-  transition: fill var(--time) var(--cubic);
-}
-
-.social-links-info .item:hover .contacts-mail,
-.social-links-info .item:focus .contacts-mail,
-.social-links-info .item:hover .contacts-tel,
-.social-links-info .item:focus .contacts-tel {
-  color: var(--blue-text);
-}
-
-.social-links-info .item:hover .icon,
-.social-links-info .item:focus .icon {
-  fill: var(--blue-text);
-}
-
-.social-links-info > .item:not(:last-child) {
-  margin-right: 30px;
 }
 
 .logo {
@@ -142,7 +113,9 @@ img {
   font-weight: 500;
   font-size: 14px;
   cursor: pointer;
-  transition: fill var(--time) var(--cubic);
+  transition-property: color;
+  transition-duration: var(--time);
+  transition-timing-function: var(--cubic);
 }
 
 .social-links .link:hover,
@@ -163,7 +136,7 @@ img {
   font-weight: 500;
   cursor: pointer;
   color: var(--blue-text);
-  padding-bottom: 31px;
+  padding-bottom: 30px;
   position: relative;
   transition: fill var(--time) var(--cubic);
 }
@@ -177,8 +150,23 @@ img {
   padding-bottom: 31px;
 }
 
+.social-links-info {
+  display: flex;
+  margin-left: auto;
+}
+
 .item .icon {
+  margin-right: 10px;
+  align-items: center;
   fill: var(--pepel-text);
+}
+
+.social-links-info > .item:not(:last-child) {
+  margin-right: 30px;
+}
+
+.item .icon:focus {
+  fill: var(--blue-text);
 }
 
 .contacts-mail {
@@ -202,6 +190,18 @@ img {
   line-height: 16px;
   letter-spacing: 0.02em;
   color: var(--pepel-text);
+}
+
+.item .contacts-mail:focus,
+.item .contacts-tel:focus {
+  color: var(--blue-text);
+}
+
+.item .contacts-mail,
+.item .contacts-tel {
+  transition-property: color;
+  transition-duration: var(--time);
+  transition-timing-function: var(--cubic);
 }
 
 /* hero */
@@ -484,7 +484,6 @@ img {
 .team-list {
   text-align: center;
   padding: 30px 32px;
-  transition: fiil var(--time) var(--cubic);
 }
 
 .team {
@@ -514,15 +513,10 @@ img {
 .cocial-list {
   margin-right: 10px;
   border-radius: 50%;
-  transition: fill var(--time) var(--cubic);
 }
 
 .cocial-list:last-child {
   margin-right: 0;
-}
-
-.cocial-info {
-  transition: fill var(--time) var(--cubic);
 }
 
 .cocial-item {
@@ -531,7 +525,9 @@ img {
   height: 44px;
   align-items: center;
   justify-content: center;
-  transition: fill var(--time) var(--cubic);
+  transition-property: background-color;
+  transition-duration: var(--time);
+  transition-timing-function: var(--cubic);
 }
 
 .cocial-item:last-child {
@@ -541,7 +537,13 @@ img {
 
 .icon-svg {
   fill: var(--icon-cocial);
-  transition: fill var(--time) var(--cubic);
+  transition-property: fill;
+  transition-duration: var(--time);
+  transition-timing-function: var(--cubic);
+}
+
+.cocial-item:focus {
+  background-color: var(--blue-text);
 }
 
 .cocial-link .cocial-list:hover .icon-svg,
@@ -584,7 +586,6 @@ img {
   margin-right: -30px;
   margin-top: 0;
   margin-bottom: 0;
-  transition: fill var(--time) var(--cubic);
 }
 
 .list-client .clients-logo {
@@ -599,20 +600,32 @@ img {
   margin-right: 30px;
   flex-basis: calc(100% / 6 - 30px);
   cursor: pointer;
-  transition: fill var(--time) var(--cubic);
+}
+
+.clients-logo .list-logo {
+  transition-property: border;
+  transition-duration: var(--time);
+  transition-timing-function: var(--cubic);
 }
 
 .clients-svg {
-  fill: currentColor;
-  transition: fill var(--time) var(--cubic);
+  fill: var(--icon-cocial);
+  transition-property: fill;
+  transition-duration: var(--time);
+  transition-timing-function: var(--cubic);
 }
 
-.list-client .clients-logo:hover .clients-svg,
-.list-client .clients-logo:focus .clients-svg {
-  fill: var(--blue-text);
-  border: 1px solid var(--blue-text);
+.clients-logo .list-logo:hover,
+.clients-logo .list-logo:focus {
   border-radius: 4px;
-  width: 176px;
+  border: 1px solid var(--blue-text);
+  height: 90px;
+  width: 480px;
+}
+
+.clients-logo .list-logo:hover .clients-svg,
+.clients-logo .list-logo:focus .clients-svg {
+  fill: var(--blue-text);
 }
 
 /* address */
@@ -701,6 +714,7 @@ img {
   display: flex;
   margin-top: 20px;
   padding: 0;
+  cursor: pointer;
 }
 
 .list-info > .icon-list:not(:last-child) {
@@ -712,23 +726,38 @@ img {
   background-color: var(--blue-text);
 }
 
-.icons-svg {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: fill var(--time) var(--cubic);
-}
-
 .icon-list {
   padding: 12px;
   margin-right: 10px;
   border-radius: 50%;
   background-color: var(--header-backgraund);
-  transition: fill var(--time) var(--cubic);
+  cursor: pointer;
 }
 
 .icons-svg {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   fill: var(--white-text);
+  transition-property: fill;
+  transition-duration: var(--time);
+  transition-timing-function: var(--cubic);
+}
+
+.list-info .cocial-info:focus .icons-svg,
+.list-info .cocial-info:hover .icons-svg {
+  fill: var(--blue-text);
+}
+
+.cocial-info:focus,
+.cocial-info:hover {
+  background-color: var(--blue-text);
+}
+
+.cocial-info {
+  transition-property: backgraund-color;
+  transition-duration: var(--time);
+  transition-timing-function: var(--cubic);
 }
 
 /* portfolio */
@@ -777,6 +806,9 @@ img {
   background: var(--background-section-four);
   color: var(--black-text);
   border-radius: 4px;
+  transition-property: color, background-color, box-shadow;
+  transition-duration: var(--time);
+  transition-timing-function: var(--cubic);
 }
 
 .section-button .section-btn:hover {
@@ -792,6 +824,9 @@ img {
   font-weight: 500;
   font-size: 16px;
   line-height: 26px;
+  transition-property: color, background-color, box-shadow;
+  transition-duration: var(--time);
+  transition-timing-function: var(--cubic);
 }
 
 /* portfolio-card */
@@ -813,6 +848,9 @@ img {
   flex-basis: calc(100% / 3 - 30px);
 
   transition: fill var(--time) var(--cubic);
+  transition-property: box-shadow;
+  transition-duration: var(--time);
+  transition-timing-function: var(--cubic);
 }
 
 .card-item {
