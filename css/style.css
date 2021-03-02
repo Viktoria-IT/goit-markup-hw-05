@@ -732,15 +732,15 @@ img {
   margin-top: 20px;
   padding: 0;
   cursor: pointer;
+  fill: currentColor;
+}
+
+.list-info:focus .icons-svg {
+  color: var(--blue-text);
 }
 
 .list-info > .icon-list:not(:last-child) {
   margin-right: 10px;
-}
-
-.list-info > .icon-list:hover,
-.list-info > .icon-list:focus {
-  background-color: var(--blue-text);
 }
 
 .icon-list {
@@ -763,6 +763,11 @@ img {
 
 .list-info .cocial-info:focus .icons-svg {
   fill: var(--blue-text);
+}
+
+.list-info > .icon-list:hover,
+.list-info > .icon-list:focus {
+  background-color: var(--blue-text);
 }
 
 .cocial-info:focus,
