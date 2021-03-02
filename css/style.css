@@ -826,7 +826,8 @@ img {
   transition-timing-function: var(--cubic);
 }
 
-.section-button .section-btn:hover {
+.section-button .section-btn:hover,
+.section-button .section-btn:focus {
   color: var(--white-text);
   background: var(--blue-text);
   cursor: pointer;
