@@ -55,12 +55,12 @@ img {
   margin-left: auto;
   margin-right: auto;
   align-items: center;
+  border-bottom: 1px solid var(--border);
 }
 
 .main-nav {
   display: flex;
   align-items: center;
-  border-bottom: 1px solid var(--border);
   margin-bottom: 0;
 }
 
@@ -159,6 +159,9 @@ img {
   margin-right: 10px;
   align-items: center;
   fill: var(--pepel-text);
+  transition-property: fill;
+  transition-duration: var(--time);
+  transition-timing-function: var(--cubic);
 }
 
 .social-links-info > .item:not(:last-child) {
@@ -651,17 +654,12 @@ img {
   background: var(--background-section-one);
 }
 
-.conteiner-footer {
-  max-width: 1200px;
-  padding-left: 15px;
-  padding-right: 15px;
-}
-
 .conteiner-info {
   display: flex;
   align-items: baseline;
-  padding-top: 74px;
-  padding-bottom: 46px;
+  margin: auto;
+  max-width: 1200px;
+  padding: 60px 15px;
 }
 
 .cocial-icons {
@@ -699,7 +697,6 @@ img {
 
 .address-link {
   margin-top: 20px;
-  margin-bottom: 9px;
 }
 
 .address-link > .link-info:not(:last-child) {
@@ -723,8 +720,6 @@ img {
   letter-spacing: 0.03em;
   text-transform: uppercase;
   color: var(--white-text);
-
-  padding-top: 86px;
 }
 
 .list-info {
@@ -838,6 +833,9 @@ img {
   cursor: pointer;
   box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08),
     0px 2px 2px rgba(0, 0, 0, 0.12);
+  transition-property: color, background-color, box-shadow;
+  transition-duration: var(--time);
+  transition-timing-function: var(--cubic);
 }
 
 .list-list:focus .section-button {
@@ -922,11 +920,6 @@ img {
   transform: translateY(0);
   opacity: 1;
 }
-
-/* .card-list:hover .portfolio-overlay {
-  transform: translateY(0);
-  opacity: 1;
-} */
 
 .portfolio-overlay {
   position: absolute;
