@@ -761,18 +761,18 @@ img {
   transition-timing-function: var(--cubic);
 }
 
-.list-info .cocial-info:focus .icons-svg {
+.list-info .cocial-info:focus .icons-svg,
+.list-info .cocial-info:hover .icons-svg {
   fill: var(--blue-text);
 }
 
-.list-info > .icon-list:hover,
-.list-info > .icon-list:focus {
-  background-color: var(--blue-text);
+.list-info .icon-list:hover,
+.list-info .icon-list:focus {
+  fill: var(--blue-text);
 }
 
-.cocial-info:focus,
-.cocial-info:hover {
-  background-color: var(--blue-text);
+.cocial-info:focus {
+  fill: var(--blue-text);
 }
 
 .cocial-info {
